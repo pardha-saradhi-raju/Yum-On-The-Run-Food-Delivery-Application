@@ -20,6 +20,7 @@ const MenuPage = () => {
 
   var abcd = 0;
   useEffect(() => {
+    // Axios.get('http://localhost:3000/resdetails')
     Axios.get('https://online-food-delivery-system.onrender.com/resdetails')
       .then((res) => {
         setRestaurants(res.data);
@@ -146,7 +147,7 @@ const handleOpenRazorpay = (data) => {
             description: 'Get your orders in no time',//
             handler: function (response) {
                 console.log(response, "34")
-                // Axios.post('http://localhost:3001/verify', { response: response })
+                //  Axios.post('http://localhost:3000/verify', { response: response })
                 Axios.post('https://online-food-delivery-system.onrender.com/verify', { response: response })
                     .then(res => {
                         console.log(res, "37")
@@ -166,7 +167,7 @@ const handleOpenRazorpay = (data) => {
 
     const handlePayment = (amount) => {
         const _data = { amount: amount }
-        // Axios.post('http://localhost:3001/orders', _data)
+        //  Axios.post('http://localhost:3000/orders', _data)
         Axios.post('https://online-food-delivery-system.onrender.com/orders', _data)
             .then(res => {
                 console.log(res.data, "29")

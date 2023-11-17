@@ -25,7 +25,7 @@ const Dashboard = () => {
 
   const updateMenuItemsInDatabase = () => {
     Axios.put('https://online-food-delivery-system.onrender.com/update', {
-    // Axios.put('http://localhost:3001/update', {
+    //  Axios.put('http://localhost:3000/update', {
       OwnerEmail: loggedInRestaurant.OwnerEmail,
       menuItems,
     })

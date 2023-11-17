@@ -9,7 +9,7 @@ const Contact = () => {
     const form = useRef();
     const sendEmail = (e) => {
         e.preventDefault();
-        emailjs.sendForm('service_j5lrs3i', 'template_1mqzjhr', form.current, '0dDqhZg44Stl2PfQ7')
+        emailjs.sendForm('service_n0k8fma', 'template_i3f4ujb', form.current, '1IAPN9qwM9uk4Xn3p')
             .then((result) => {
                 alert("Sent Message Successfully ✅")
                 console.log(result.text);
@@ -17,7 +17,7 @@ const Contact = () => {
                 console.log(error.text);
             });
 
-        emailjs.sendForm('service_j5lrs3i', 'template_y8rmu1m', form.current, '0dDqhZg44Stl2PfQ7')
+        emailjs.sendForm('service_n0k8fma', 'template_5oq37zt', form.current, '1IAPN9qwM9uk4Xn3p')
             .then((result) => {
                 console.log(result.text);
             }, (error) => {

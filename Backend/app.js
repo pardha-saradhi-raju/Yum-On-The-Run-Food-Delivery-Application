@@ -16,7 +16,7 @@ app.use(bodyParser.json({ limit: '50mb' }));
 app.post('/orders', paymentController.orders)
 app.post('/verify', paymentController.verfiy)
 
-mongoose.connect('mongodb+srv://Mern_Project:Mern_Project@cluster0.sev3w1l.mongodb.net/?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://doradlapardhasaradhiraju:raju@cluster0.inxkaut.mongodb.net/?retryWrites=true&w=majority')
     .then((res) => {
         console.log('connected to database')
     }).catch(err => console.log(err))
@@ -24,7 +24,7 @@ mongoose.connect('mongodb+srv://Mern_Project:Mern_Project@cluster0.sev3w1l.mongo
 
 app.use('/', require('./routes/Route'))
 
-app.listen(3001, () => {
+app.listen(3000, () => {
     console.log('server connected')
 })
 
