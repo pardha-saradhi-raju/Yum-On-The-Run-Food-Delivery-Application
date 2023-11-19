@@ -1,6 +1,6 @@
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 100%;
+    /* margin: 0 auto; */
 }
 
 
@@ -9,6 +9,7 @@
     background-size: cover;
     padding-top: 10%;
     padding-bottom: 20%;
+    margin-bottom: -20px;;
 }
 
 .search-section h1 {
@@ -19,6 +20,10 @@
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-right: 850px;
 }
 
 .search-bar .inp {
@@ -45,11 +50,20 @@
 .services {
     text-align: center;
     margin-bottom: 20px;
+    background-color: rgb(21, 22, 22);
+    color: #fff;
+    margin: -5px;
+}
+
+.options{
+    display: flex;
+    gap: 50px;
 }
 
 .services h2 {
     padding-top:30px;
     margin-bottom: 20px;
+    color: rgb(212, 34, 212);
 }
 
 .service-container {
@@ -58,7 +72,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    /* height: 300px; */
+    height: 250px;
 }
 
 .serviceOne,.serviceTwo,.serviceThree {

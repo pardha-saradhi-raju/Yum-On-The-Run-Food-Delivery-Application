@@ -75,8 +75,8 @@ const SignUp = () => {
 
         console.log(newUserData)
 
-        Axios.post('https://online-food-delivery-system.onrender.com/newcustomer', newUserData)
-            // Axios.post('http://localhost:3000/newcustomer', newUserData)
+        //Axios.post('https://online-food-delivery-system.onrender.com/newcustomer', newUserData)
+            Axios.post('http://localhost:3000/newcustomer', newUserData)
             .then((res) => {
                 console.log("client", res)
                 if (res.data.message === 'success') {

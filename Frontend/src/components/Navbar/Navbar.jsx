@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import './Navbar.css'
 import { FaArrowCircleUp } from 'react-icons/fa';
+import logoimg from './logoimg.jpg';
 
 const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -32,8 +33,16 @@ const Navbar = () => {
 
       <nav className="navbar">
         <div className="navbar-brand">
-          <Link to="/" className="logo">Food Delivery</Link>
+          <div className="logooo">
+            <div className="logoo">
+              <img src={logoimg} className="imglogo" />
+            </div>
+          <Link to="/" className="logo">YumOnTheRun</Link>
         </div>
+      </div>
+        {/* </div>
+          <Link to="/" className="logo">YumOnTheRun</Link>
+        </div> */}
         <div className={isMobile ? 'nav-links-mobile' : 'nav-links'}>
           <Link to="/" className="nav-link">Home</Link>
           <Link to="/contact2" className="nav-link">Contact</Link>

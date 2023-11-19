@@ -37,8 +37,8 @@ const CustomerHome = () => {
     }
 
     useEffect(() => {
-        // Axios.get('http://localhost:3000/getresownerdet', { params: { email: location.state.email.toLowerCase() } })
-        Axios.get('https://online-food-delivery-system.onrender.com/getresownerdet', { params: { email: location.state.email.toLowerCase() } })
+        Axios.get('http://localhost:3000/getresownerdet', { params: { email: location.state.email.toLowerCase() } })
+        // Axios.get('https://online-food-delivery-system.onrender.com/getresownerdet', { params: { email: location.state.email.toLowerCase() } })
             .then((res) => {
                 // console.log(res.data[0])
                 setUserDetails(res.data[0]);

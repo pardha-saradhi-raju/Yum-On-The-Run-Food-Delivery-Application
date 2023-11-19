@@ -8,7 +8,7 @@ import bcrypt from 'bcryptjs'
 import Footer from '../Footer/Footer';
 import Navbar from './../Navbar/Navbar'
 import { userdetailscontext } from '../Contexts/UserContext';
-
+import loginimg from './loginimage.jpg';
 
 const Login = () => {
     // const { userDetails, setUserDetails, isCustomer, setAsCustomer } = useContext(userdetailscontext)
@@ -25,7 +25,6 @@ const Login = () => {
     const handlechange = (e, label) => {
         setUserDetails({ ...userDetails, [label]: e.target.value })
     }
-
 
     const checkUserExistence = () => {
 
@@ -64,8 +63,8 @@ const Login = () => {
                 }
 
             }).catch(err => console.log(err))*/
-            // Axios.get('http://localhost:3000/custdetails')
-            Axios.get('https://online-food-delivery-system.onrender.com/custdetails')
+            Axios.get('http://localhost:3000/custdetails')
+            // Axios.get('https://online-food-delivery-system.onrender.com/custdetails')
       .then((res) => {
         const cust = res.data.find((d) => d.CustomerEmail === userDetails.email);
 
@@ -91,8 +90,8 @@ const Login = () => {
     }
         else {
             //url = url +'2';
-            // Axios.get('http://localhost:3000/resdetails')
-            Axios.get('https://online-food-delivery-system.onrender.com/resdetails')
+            Axios.get('http://localhost:3000/resdetails')
+            // Axios.get('https://online-food-delivery-system.onrender.com/resdetails')
       .then((res) => {
         const restaurant = res.data.find((d) => d.OwnerEmail === userDetails.email);
 
@@ -117,7 +116,7 @@ const Login = () => {
   };
         
     }
-        Axios.get('https://online-food-delivery-system.onrender.com/' + url, { params: { email: userDetails.email.toLowerCase() } })
+        // Axios.get('https://online-food-delivery-system.onrender.com/' + url, { params: { email: userDetails.email.toLowerCase() } })
             
         
 
@@ -125,22 +124,34 @@ const Login = () => {
     return (
         <>
             <Navbar />
+            <div className='logincontainer'>
             <div id='abcd2' style={{ margin: "auto" }}>
-                <FormControl id='logindiv'>
+                <FormControl id='logindiv' style={{ width: "1000px"}}>
                     <h2 style={{ color: "magenta", margin: "30px 0" }}>Login Form</h2>
                     <Stack direction="column" alignItems="center" spacing={2}>
                         <TextField label="Email" required margin='normal' variant='filled' color='secondary' onChange={e => handlechange(e, 'email')}></TextField>
                         <TextField label="Password" type='password' required margin='normal' variant='filled' color='secondary' onChange={e => handlechange(e, 'password')}></TextField>
                         <FormControlLabel control={<Checkbox sx={{ '& .MuiSvgIcon-root': { fontSize: 28 } }} />} label="Check if ur an customer" onChange={() => setAsCustomer(!isCustomer)} />
                         <Button type='submit' variant="contained" component="label" onClick={checkUserExistence}> Submit </Button>
-                        <Link to='/signupcust' style={{ textDecoration: "none" }}> <p className='c'>Create an account as a customer</p> </Link>
-                        <Link to='/signuprest' style={{ textDecoration: "none" }}> <p className='c'>Create an account as a Restaurant Owner</p> </Link>
+                        <Link to='/signupcust' style={{ textDecoration: "none" }}> <p className='c' style={{ color: "blue"}}>Create an account as a customer</p> </Link>
+                        <Link to='/signuprest' style={{ textDecoration: "none" }}> <p className='c' style={{ color: "blue"}}>Create an account as a Restaurant Owner</p> </Link>
                     </Stack>
                 </FormControl>
             </div>
+            <img
+          src={loginimg}
+          alt="logimg"
+          width={700}
+          height={504}
+          loading="lazy"
+          className="loginimg "
+        />
+            </div>
+            
             <Footer />
         </>
     )
 }
 
 export default Login
+

@@ -46,11 +46,14 @@ const Home = () => {
               <div>
                 <input type="text" className='inp' placeholder="Enter your location" value={location} onChange={handleLocationChange} />
               </div>
-              <div>
-                <button type="button" className='btnn' onClick={handleLocationClick}> Use GPS </button>
-              </div>
-              <div>
-                <button type="submit" className='btnn' onClick={handleSearch}> Search </button>
+
+              <div className="options">
+                 <div>
+                    <button type="button" className='btnn' onClick={handleLocationClick}> Use GPS </button>
+                  </div>
+                  <div>
+                    <button type="submit" className='btnn' onClick={handleSearch}> Search </button>
+                  </div>
               </div>
             </div>
           </section>
