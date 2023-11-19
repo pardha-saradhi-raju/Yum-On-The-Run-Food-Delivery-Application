@@ -20,8 +20,8 @@ const MenuPage = () => {
 
   var abcd = 0;
   useEffect(() => {
-    Axios.get('http://localhost:3000/resdetails')
-    // Axios.get('https://online-food-delivery-system.onrender.com/resdetails')
+    // Axios.get('http://localhost:3000/resdetails')
+    Axios.get('https://online-food-delivery-system.onrender.com/resdetails')
       .then((res) => {
         setRestaurants(res.data);
       })
