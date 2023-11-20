@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import './Navbar2.css'
 import { FaArrowCircleUp } from 'react-icons/fa';
-import { BsCartCheckFill } from 'react-icons/bs'
+import { BsCartCheckFill } from 'react-icons/bs';
+import logoimg from './logoimg.jpg';
 
 const Navbar2 = (props) => {
 
@@ -53,9 +54,17 @@ const Navbar2 = (props) => {
                 <FaArrowCircleUp className='icon' />
             </div>
             <nav className="navbar">
-                <div className="navbar-brand">
+                {/* <div className="navbar-brand">
                     <Link to="/" className="logo">Food Delivery</Link>
-                </div>
+                </div> */}
+                <div className="navbar-brand">
+          <div className="logooo">
+            <div className="logoo">
+              <img src={logoimg} className="imglogo" />
+            </div>
+          <Link to="/" className="logo">YumOnTheRun</Link>
+        </div>
+      </div>
                 <div className={isMobile ? 'nav-links-mobile' : 'nav-links'}>
                     <Link to="/" className="nav-link">Home</Link>
                     {!window.location.href.includes('restowner') ? <Link to="/menu" className="nav-link">Menu</Link> : ''}

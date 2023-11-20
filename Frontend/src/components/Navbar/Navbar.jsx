@@ -37,9 +37,9 @@ const Navbar = () => {
             <div className="logoo">
               <img src={logoimg} className="imglogo" />
             </div>
-          <Link to="/" className="logo">YumOnTheRun</Link>
+            <Link to="/" className="logo">YumOnTheRun</Link>
+          </div>
         </div>
-      </div>
         {/* </div>
           <Link to="/" className="logo">YumOnTheRun</Link>
         </div> */}

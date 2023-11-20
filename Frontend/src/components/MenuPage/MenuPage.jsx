@@ -4,6 +4,7 @@ import { FaArrowCircleUp } from 'react-icons/fa';
 import { BsCartCheckFill } from 'react-icons/bs'
 import Axios from 'axios';
 import './MenuPage.css';
+import logoimg from './logoimg.jpg';
 
 import search from './../../assets/search.png';
 import Footer from '../Footer/Footer';
@@ -20,8 +21,8 @@ const MenuPage = () => {
 
   var abcd = 0;
   useEffect(() => {
-    // Axios.get('http://localhost:3000/resdetails')
-    Axios.get('https://online-food-delivery-system.onrender.com/resdetails')
+    Axios.get('http://localhost:3000/resdetails')
+    // Axios.get('https://online-food-delivery-system.onrender.com/resdetails')
       .then((res) => {
         setRestaurants(res.data);
       })
@@ -143,7 +144,7 @@ const handleOpenRazorpay = (data) => {
             amount: Number(data.amount),
             currency: data.currency,
             order_id: data.id,
-            name: 'FOOD DELIVERY',//
+            name: 'YumOnTheRun',//
             description: 'Get your orders in no time',//
             handler: function (response) {
                 console.log(response, "34")
@@ -188,13 +189,19 @@ const handleOpenRazorpay = (data) => {
   }
 
   return (
-    <>
+    <div className="container">
       <div className="scroll-top" onClick={handleClick2} style={{ display: visibility ? "block" : "none" }} >
         <FaArrowCircleUp className='icon' />
       </div>
       <nav className="navbar">
-        <div className="navbar-brand">
+        {/* <div className="navbar-brand">
           <Link to="/" className="logo">Food Delivery</Link>
+        </div> */}
+        <div className="logooo">
+            <div className="logoo">
+              <img src={logoimg} className="imglogo" />
+            </div>
+            <Link to="/" className="logo">YumOnTheRun</Link>
         </div>
         <div className={isMobile ? 'nav-links-mobile' : 'nav-links'}>
           <Link to="/" className="nav-link">Home</Link>
@@ -282,7 +289,7 @@ const handleOpenRazorpay = (data) => {
         <div className="restaurants-container">
           {filteredRestaurants.map((restaurant) => (
             <div key={restaurant.id} className="restaurant">
-              <h2>{restaurant.RestaurantName}</h2>
+              <h2 style={{ color: "white", fontWeight: "bold"}}>{restaurant.RestaurantName}</h2>
 
               {Object.entries(restaurant.menuItems).map(([category, items]) => {
                 const filteredItems = items.filter((item) =>
@@ -293,7 +300,7 @@ const handleOpenRazorpay = (data) => {
                 if (filteredItems.length > 0) {
                   return (
                     <div key={category} className="category">
-                      <h3>{category.toUpperCase()}</h3>
+                      <h3 style={{ color: "white", fontWeight: "bold"}}>{category.toUpperCase()}</h3>
                       <div className="items-container">
                         {filteredItems.map((item) => {
                           const cartItem = cartItems.find(
@@ -306,12 +313,12 @@ const handleOpenRazorpay = (data) => {
                             <div key={item.itemName} className="item-box">
                               <img src={item.itemImg} alt={item.itemName} className="item-image" />
                               <div className="item-details">
-                                <p>{item.itemName.toUpperCase()}</p>
-                                <p> &#8377;{item.itemPrice}/- </p>
+                                <p style={{ color: "black", fontWeight: "bold"}}>{item.itemName.toUpperCase()}</p>
+                                <p style={{ color: "black", fontWeight: "bold"}}> &#8377;{item.itemPrice}/- </p>
                                 <div className="quantity-container">
-                                  <button onClick={() => handleRemoveFromCart(restaurant.id, item)}>-</button>
-                                  <p>{quantity}</p>
-                                  <button onClick={() => handleAddToCart(restaurant.id, item)}>+</button>
+                                  <button style={{backgroundColor:"black"}}onClick={() => handleRemoveFromCart(restaurant.id, item)}>-</button>
+                                  <p style={{ color: "black", fontWeight: "bold"}} >{quantity}</p>
+                                  <button style={{backgroundColor:"black"}} onClick={() => handleAddToCart(restaurant.id, item)}>+</button>
                                 </div>
                               </div>
                             </div>
@@ -329,7 +336,7 @@ const handleOpenRazorpay = (data) => {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 
